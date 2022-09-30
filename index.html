@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOTSTRAP</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1><center>Bored?</center></h1>
+    <p><center>API Arandia, Keith Denzel S.</center></p>
+    <!--<h1 class = "hello"></h1>-->
+    <div class="container fluid">
+        <div class="row">
+            <div class="col-sm-12" style="background-color:beige;">
+                <center><h1 class = "hi"></center></div></h1>
+              <div class="row">
+                <div class="col-sm-6" style="background-color:blueviolet;"><center><h3 class = "type"></h3></center></div>
+                <div class="col-sm-6" style="background-color:antiquewhite;"><center><h3 class = "participant"></h3></center></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        axios.get("http://www.boredapi.com/api/activity")
+            .then(response => {
+                bored? = response.data
+                console.log(bored?)
+                document.querySelector(".hi").innerHTML = "HI: " + bored?.hi
+                document.querySelector(".type").innerHTML = "Type: " + bored?.type
+                document.querySelector(".participants").innerHTML = "Participants: " + bored?.participants
+            })
+    </script>
+</body>
+</html>
